@@ -4,15 +4,7 @@ const bannedSequences = ['tutor', 'cancer', 'suck', 'sux', 'fuck'];
 
 const bannedWords = ['gm', 'cm', 'god'];
 
-// Names is valid when:
-// - doesn't contains banned words
-// - has minimum of 3 letters and maximum of 29 characters
-// - first letter is upper case alphabet character
-// - last letter is lower case alphabet character
-// - doesn't have more than 3 words
-// - contains only alphabet letters and spaces
-
-export const createCharacterSchema = Yup.object().shape({
+export const createGuildSchema = Yup.object().shape({
   name: Yup.string()
     .required('Field is required')
     .min(3)
@@ -72,6 +64,7 @@ export const createCharacterSchema = Yup.object().shape({
         return split.length < 4;
       }
     ),
+  ownerid: Yup.string().required('Field is required'),
 });
 
-export type CreateCharacter = Yup.TypeOf<typeof createCharacterSchema>;
+export type CreateGuild = Yup.TypeOf<typeof createGuildSchema>;

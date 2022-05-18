@@ -10,8 +10,12 @@ declare global {
 const prisma =
   global.prisma ||
   new PrismaClient({
-    log: ['query'],
+    log: [{ level: 'query', emit: 'event' }],
   });
+
+prisma.$on('query', (e) => {
+  console.log(e);
+});
 
 if (dev) {
   global.prisma = prisma;

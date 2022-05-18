@@ -72,7 +72,10 @@ const FormWrapper = ({
                     >
                       {field.options &&
                         field.options.map((option) => (
-                          <option key={option.value} value={option.value}>
+                          <option
+                            key={option.key ? option.key : option.value}
+                            value={option.value}
+                          >
                             {option.text}
                           </option>
                         ))}

@@ -20,14 +20,28 @@ const Navigation = () => {
       <DropdownButton text="Home" href="/" />
       <DropdownButton
         hasMenu={true}
-        list={[{ text: 'Highscores', url: '/highscores' }]}
+        list={[
+          { text: 'Char Bazaar', url: '/highscores' },
+          { text: 'Houses', url: '/highscores' },
+          { text: 'Guilds', url: '/guilds' },
+        ]}
         text="Community"
       />
+      <DropdownButton
+        hasMenu={true}
+        list={[
+          { text: 'Highscores', url: '/highscores' },
+          { text: 'Who is online', url: '/highscores' },
+        ]}
+        text="Statistics"
+      />
+
       <DropdownButton
         hasMenu={true}
         list={[{ text: 'Server Information', url: '/serverinfo' }]}
         text="Library"
       />
+      <DropdownButton text="Donate" href="/donate" />
 
       <Box alignSelf="center">
         <form

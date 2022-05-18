@@ -24,6 +24,7 @@ const post = async (req: NextApiRequest, res: NextApiResponse) => {
       name,
       password: sha1Encrypt(password),
       email,
+      premdays: 9999,
     },
   });
 

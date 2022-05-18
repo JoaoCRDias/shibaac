@@ -35,29 +35,26 @@ const SideBar = () => {
         header="Server Status"
         isLoading={!state.topPlayers || !state.serverStatus}
       >
-        <table className="table table-condensed table-content table-striped">
-          <tbody>
-            <tr>
-              <td>
-                {state.serverStatus && state.serverStatus.online ? (
-                  <Label colorScheme="green">ONLINE</Label>
-                ) : (
-                  <Label colorScheme="red">OFFLINE</Label>
-                )}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                {state.serverStatus && (
-                  <Link
-                    href="/online"
-                    text={`${state.serverStatus.onlineCount} players online`}
-                  />
-                )}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          {state.serverStatus && state.serverStatus.online ? (
+            <Label colorScheme="green">ONLINE</Label>
+          ) : (
+            <Label colorScheme="red">OFFLINE</Label>
+          )}
+
+          {state.serverStatus && (
+            <Link
+              href="/online"
+              text={`${state.serverStatus.onlineCount} players online`}
+            />
+          )}
+        </div>
       </Panel>
 
       <Panel header="Top 5 Level" isLoading={!state.topPlayers}>

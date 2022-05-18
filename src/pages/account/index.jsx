@@ -6,7 +6,7 @@ import { withSessionSsr } from 'src/util/session';
 import Button from '../../components/Button';
 import StripedTable from '../../components/StrippedTable';
 import { Wrap } from '@chakra-ui/react';
-import { vocationIdToName } from '../../util';
+import { timestampToDate, vocationIdToName } from '../../util';
 
 export default function Account({ user }) {
   const [info, setInfo] = useState(null);

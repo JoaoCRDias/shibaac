@@ -10,7 +10,7 @@ export function validate(
       try {
         req.body = await schema
           .camelCase()
-          .validate(req.body, { abortEarly: false, stripUnknown: true });
+          .validate(req.body, { abortEarly: false, stripUnknown: false });
       } catch (yupError: any) {
         return res
           .status(400)

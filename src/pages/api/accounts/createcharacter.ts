@@ -4,9 +4,11 @@ import { validate } from 'src/middleware/validation';
 import { createCharacterSchema } from 'src/schemas/CreateCharacter';
 import prisma from 'src/database/instance';
 import apiHandler from 'src/middleware/apiHandler';
+import { newChar } from 'src/constants/constants';
 
 const post = withSessionRoute(
   async (req: NextApiRequest, res: NextApiResponse) => {
+    console.log(req);
     const user = req.session.user;
     if (!user) {
       return res.status(403).json({ message: 'Not authorised.' });
@@ -27,10 +29,11 @@ const post = withSessionRoute(
 
     const character = await prisma.players.create({
       data: {
+        ...newChar,
         name,
         account_id: user.id,
-        vocation,
-        sex,
+        vocation: parseInt(vocation),
+        sex: parseInt(sex),
       },
     });
 

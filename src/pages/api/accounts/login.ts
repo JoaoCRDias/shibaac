@@ -9,7 +9,7 @@ import apiHandler from 'src/middleware/apiHandler';
 const post = withSessionRoute(
   async (req: NextApiRequest, res: NextApiResponse) => {
     const { name, password } = req.body;
-
+    console.log(sha1Encrypt(password));
     const account = await prisma.accounts.findFirst({
       where: { name, password: sha1Encrypt(password) },
       select: { id: true, name: true },

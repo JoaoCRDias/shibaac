@@ -60,7 +60,7 @@ export default function Character() {
       ? timestampToDate(state.player.lastlogin)
       : 'Never logged in';
 
-  const isPremium = state.player.premium_ends_at >= Date.now();
+  const isPremium = state.player.premdays >= Date.now();
 
   return (
     <>
