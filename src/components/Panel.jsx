@@ -3,7 +3,15 @@ import Loader from './Loader';
 import { Flex, Box, Text, Grid } from '@chakra-ui/react';
 import { TimeIcon } from '@chakra-ui/icons';
 
-const Panel = ({ header, date, identifier, children, isLoading, margin }) => {
+const Panel = ({
+  header,
+  headerProps,
+  date,
+  identifier,
+  children,
+  isLoading,
+  margin,
+}) => {
   return (
     <Flex
       key={identifier}
@@ -18,7 +26,9 @@ const Panel = ({ header, date, identifier, children, isLoading, margin }) => {
     >
       <Flex bg="#f5f5f5" border="1px" borderColor="#ddd" borderRadius="md">
         <Grid margin="10px" width="100%" templateColumns="1fr auto">
-          <Text colSpan={1}>{header}</Text>
+          <Text {...headerProps} colSpan={1}>
+            {header}
+          </Text>
           {date && (
             <Box>
               <Text colSpan={2} align="right">

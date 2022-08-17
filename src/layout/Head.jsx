@@ -14,7 +14,7 @@ const Head = ({ title, keyword, description }) => {
           content="width=device-width,initial-scale=1"
           key="viewport"
         />
-        <link rel="icon" href={`/favicon.ico`} key="favicon" />
+        <link rel="icon" href={`/favicon4.ico`} key="favicon" />
       </NextHead>
       <NextSeo
         title={title}
@@ -26,7 +26,7 @@ const Head = ({ title, keyword, description }) => {
           description: description,
           //url: properties.canonical,
           locale: 'en',
-          site_name: 'SHIBAac',
+          site_name: 'Kingsman OT',
         }}
       />
     </>
@@ -34,7 +34,7 @@ const Head = ({ title, keyword, description }) => {
 };
 
 Head.defaultProps = {
-  title: 'SHIBAac',
+  title: 'Kingsman OT',
   keywords: 'tibia, aac, ots, account creator',
   description: 'Automatic Account Creator',
 };

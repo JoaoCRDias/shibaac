@@ -4,7 +4,7 @@ import { Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
 
 const StripedTable = ({ head, body }) => {
   return (
-    <Table variant="simple">
+    <Table variant="simple" size={'sm'}>
       {head && (
         <Thead>
           <Tr>

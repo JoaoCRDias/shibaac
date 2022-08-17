@@ -2,7 +2,7 @@
   <img src="./public/images/header.png">
 </p>
 
-<h1 align="center">SHIBAAC</h1>
+<h1 align="center">Kingsman</h1>
 
 This project aims to provide a fully featured, secure and fast AAC (Automatic Account Creator) for Open Tibia Servers.
 

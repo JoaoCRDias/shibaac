@@ -13,8 +13,14 @@ const get = async (req: NextApiRequest, res: NextApiResponse) => {
       guild_membership: {
         include: {
           players: { select: { name: true, level: true, vocation: true } },
+          guild_ranks: { select: { name: true, id: true, level: true } },
+        },
+
+        orderBy: {
+          guild_ranks: { level: 'asc' },
         },
       },
+      guild_ranks: { select: { name: true, id: true, level: true } },
     },
   });
 

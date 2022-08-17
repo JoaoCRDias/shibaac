@@ -1,7 +1,5 @@
 import Panel from 'src/components/Panel';
 import { useRouter } from 'next/router';
-import FormWrapper from 'src/components/FormWrapper';
-import { searchCharacterSchema } from 'src/schemas/SearchCharacter';
 import Button from '../../components/Button';
 import { useEffect, useState } from 'react';
 import {
@@ -9,11 +7,9 @@ import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
-  TableCaption,
   TableContainer,
   Link,
 } from '@chakra-ui/react';

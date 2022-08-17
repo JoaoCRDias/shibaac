@@ -12,7 +12,14 @@ const post = withSessionRoute(
     console.log(sha1Encrypt(password));
     const account = await prisma.accounts.findFirst({
       where: { name, password: sha1Encrypt(password) },
-      select: { id: true, name: true },
+      include: {
+        players: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
     });
 
     if (!account) {

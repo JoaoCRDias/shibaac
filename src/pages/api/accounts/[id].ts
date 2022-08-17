@@ -10,7 +10,9 @@ const get = async (req: NextApiRequest, res: NextApiResponse) => {
       id: Number(req.query.id),
     },
     include: {
-      players: { select: { name: true, level: true, vocation: true } },
+      players: {
+        select: { id: true, name: true, level: true, vocation: true },
+      },
     },
   });
 

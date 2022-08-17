@@ -42,3 +42,5 @@ export const groupToName = [
   'Community Manager',
   'God',
 ];
+
+export const rankToName = ['Unranked', 'Leader', 'Vice Leader', 'Member'];

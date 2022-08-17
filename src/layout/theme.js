@@ -32,6 +32,13 @@ export const Theme = extendTheme({
       800: '#291738',
       900: '#100619',
     },
+    black: {
+      100: '#d4d1d3',
+      400: '#666466',
+      700: '#4a494a',
+      800: '#2b2a2b',
+      900: '#161B19',
+    },
   },
 
   styles: {
@@ -44,12 +51,10 @@ export const Theme = extendTheme({
         margin: '0px',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
+        backgroundSize: 'cover',
         fontFamily: 'Roboto',
         fontSize: '15px',
-        bg: mode(
-          'linear-gradient(to right top,#2a1036,#361149,#43105d,#4f0f71,#5b0b87)',
-          'linear-gradient(to right top,#2a1036,#361149,#43105d,#4f0f71,#5b0b87)'
-        )(props),
+        backgroundImage: './images/bg.png',
       },
     }),
   },

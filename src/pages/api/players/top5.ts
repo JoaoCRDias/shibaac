@@ -6,6 +6,7 @@ const get = async (req: NextApiRequest, res: NextApiResponse) => {
   const players = await prisma.players.findMany({
     orderBy: { level: 'desc' },
     select: { name: true, level: true },
+    take: 5,
   });
 
   res.json({ success: true, args: { players } });

@@ -11,7 +11,7 @@ const Navigation = () => {
 
   return (
     <Flex
-      bgColor="violet.400"
+      bgColor="black.800"
       height="fit-content"
       marginBottom="1.5em"
       flexDir="row"
@@ -24,6 +24,8 @@ const Navigation = () => {
           { text: 'Char Bazaar', url: '/highscores' },
           { text: 'Houses', url: '/highscores' },
           { text: 'Guilds', url: '/guilds' },
+          { text: 'Last Deaths', url: '/guilds' },
+          { text: 'Banishments', url: '/guilds' },
         ]}
         text="Community"
       />
@@ -32,30 +34,28 @@ const Navigation = () => {
         list={[
           { text: 'Highscores', url: '/highscores' },
           { text: 'Who is online', url: '/highscores' },
+          { text: 'Power Gamers', url: '/guilds' },
         ]}
         text="Statistics"
       />
 
       <DropdownButton
         hasMenu={true}
-        list={[{ text: 'Server Information', url: '/serverinfo' }]}
+        list={[
+          { text: 'Server Information', url: '/library/serverinfo' },
+          { text: 'Raid Calendar', url: '/serverinfo' },
+        ]}
         text="Library"
       />
+      <DropdownButton
+        hasMenu={true}
+        list={[
+          { text: 'Snowball', url: '/library/serverinfo' },
+          { text: 'Castle', url: '/serverinfo' },
+        ]}
+        text="Events"
+      />
       <DropdownButton text="Donate" href="/donate" />
-
-      <Box alignSelf="center">
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-            if (event.target.search.value) {
-              router.push(`/character/${event.target.search.value}`);
-              event.target.reset();
-            }
-          }}
-        >
-          <TextInput name="search" placeholder="Search character..." />
-        </form>
-      </Box>
 
       <Spacer />
       {user ? (

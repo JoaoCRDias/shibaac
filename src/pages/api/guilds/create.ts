@@ -19,7 +19,6 @@ const post = async (req: NextApiRequest, res: NextApiResponse) => {
       message: 'Guild with that name already exists.',
     });
   }
-  console.log('*************** CREATION DATA', creationdata);
   try {
     const transaction = await prisma.$transaction(async (prisma) => {
       const guild = await prisma.guilds.create({
@@ -30,8 +29,6 @@ const post = async (req: NextApiRequest, res: NextApiResponse) => {
         },
       });
 
-      console.log('GUILD', guild);
-
       const rankId = await prisma.guild_ranks.findFirst({
         where: {
           guild_id: guild.id,
@@ -39,13 +36,11 @@ const post = async (req: NextApiRequest, res: NextApiResponse) => {
         },
       });
 
-      console.log('RANKID', rankId);
-
       const guild_membership = await prisma.guild_membership.create({
         data: {
           player_id: Number(ownerid),
           guild_id: guild.id,
-          rank_id: rankId.id,
+          rank_id: rankId?.id as number,
         },
       });
     });

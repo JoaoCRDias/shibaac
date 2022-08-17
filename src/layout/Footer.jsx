@@ -9,8 +9,9 @@ const Footer = () => {
       borderRadius="md"
       padding="10px"
       textAlign="center"
+      marginBottom={'10px'}
     >
-      Copyright © 2021-2022 Nekiro
+      Kingsman servers
     </Box>
   );
 };

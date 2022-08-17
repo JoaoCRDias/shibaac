@@ -26,7 +26,12 @@ export default function Index() {
   return (
     <>
       {news.map((post) => (
-        <Panel key={post.title} header={post.title} date={post.date}>
+        <Panel
+          key={post.title}
+          header={post.title}
+          headerProps={{ fontWeight: 'bold' }}
+          date={post.date}
+        >
           <div dangerouslySetInnerHTML={{ __html: sanitize(post.content) }} />
         </Panel>
       ))}

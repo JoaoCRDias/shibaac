@@ -16,8 +16,8 @@ const Layout = ({ children }) => {
         marginRight="auto"
         marginBottom="15px"
         marginTop="15px"
-        src="/images/header.png"
-        alt="shibaac"
+        src="/images/Kingsman.png"
+        alt="Kingsman OT"
       />
       <Navigation />
       <Flex>

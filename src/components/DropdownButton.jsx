@@ -2,7 +2,14 @@ import Link from 'next/link';
 import React from 'react';
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react';
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
+  Text,
+} from '@chakra-ui/react';
 
 const DropdownButton = ({ hasMenu, text, href, list }) => {
   if (hasMenu) {
@@ -20,7 +27,7 @@ const DropdownButton = ({ hasMenu, text, href, list }) => {
           _active={{ bgColor: ' rgba(255, 255, 255, 0.3)' }}
           _focus={{ outline: 0 }}
         >
-          {text}
+          <Text>{text}</Text>
         </MenuButton>
         <MenuList padding={0}>
           {list.map((item) => (
@@ -30,7 +37,7 @@ const DropdownButton = ({ hasMenu, text, href, list }) => {
                 _hover={{ bgColor: 'violet.50' }}
                 _focus={{ bgColor: 'violet.50' }}
               >
-                {item.text}
+                <Text>{item.text}</Text>
               </MenuItem>
             </Link>
           ))}
@@ -51,7 +58,7 @@ const DropdownButton = ({ hasMenu, text, href, list }) => {
           _focus={{ outline: '0' }}
           alignSelf="self-end"
         >
-          {text}
+          <Text>{text}</Text>
         </Button>
       </Link>
     );
